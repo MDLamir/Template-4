@@ -313,7 +313,7 @@ body {
     background-color: #0075ff45;
 }
 
-.target-row .projects .icon {
+.projects .icon {
     background-color: #f59f0b2f;
 }
 
@@ -616,22 +616,22 @@ body {
 
 .social-media .twitter {
     background-color: #1da1f23d;
-    box-shadow: 0 1px 1px #1da1f2,1px 2px 1px #1da1f2,1px 2px 3px #1da1f2;
+    box-shadow: 0 1px 1px #1da1f2, 1px 2px 1px #1da1f2, 1px 2px 3px #1da1f2;
 }
 
 .social-media .facebook {
     background-color: #1877f22e;
-    box-shadow: 0 1px 1px #1877f2,1px 2px 1px #1877f2,1px 2px 3px #1877f2;
+    box-shadow: 0 1px 1px #1877f2, 1px 2px 1px #1877f2, 1px 2px 3px #1877f2;
 }
 
 .social-media .youtube {
     background-color: #ff000026;
-    box-shadow: 0 1px 1px #ff0000,1px 2px 1px #ff0000,1Px 2px 3px #ff0000;
+    box-shadow: 0 1px 1px #ff0000, 1px 2px 1px #ff0000, 1Px 2px 3px #ff0000;
 }
 
 .social-media .linkedin {
     background-color: #0077b52e;
-    box-shadow: 0 1px 1px #0077b5,1px 2px 1px #0077b5,1px 2px 3px #0077b5;
+    box-shadow: 0 1px 1px #0077b5, 1px 2px 1px #0077b5, 1px 2px 3px #0077b5;
 }
 
 .social-media .twitter i,
@@ -669,6 +669,7 @@ body {
 .social-media .linkedin span {
     color: #0077b5;
 }
+
 /* end social media widget */
 /* start projects widget*/
 .project {
@@ -699,7 +700,7 @@ body {
     margin-left: -20px;
 }
 
-.complete  {
+.complete {
     background-color: var(--green-color);
 }
 
@@ -714,6 +715,7 @@ body {
 .progress {
     background-color: var(--blue-color);
 }
+
 /* end projects widget*/
 /* end content */
 @keyframes fade-in {
