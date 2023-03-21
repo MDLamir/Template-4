@@ -1,0 +1,481 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+*:focus {
+    outline: none;
+}
+
+:root {
+    --blue-color: #0075ff;
+    --blue-alt-color: #0d69d5;
+    --orange-color: #f59e0b;
+    --green-color: #22c55e;
+    --red-color: #f44336;
+    --grey-color: #888;
+    --main-transition: .3s;
+}
+
+body {
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    border: none;
+}
+
+input:focus {
+    outline: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--blue-color);
+    transition: var(--main-transition);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--blue-alt-color);
+}
+
+::-webkit-scrollbar-track {
+    background-color: white;
+}
+
+/* start components */
+.custom-checkbox {
+    display: none;
+    appearance: none;
+}
+
+.custom-checkbox+label {
+    background-color: #ccc;
+    height: 30px;
+    width: 70px;
+    border-radius: 20px;
+}
+
+.custom-checkbox+label .checkbox-toggle {
+    height: 100%;
+    width: 100%;
+    border-radius: inherit;
+    transition: var(--main-transition);
+    position: relative;
+}
+
+.custom-checkbox+label .checkbox-toggle::before {
+    font-family: "Font Awesome 6 free";
+    position: absolute;
+    content: "\f00d";
+    font-weight: 900;
+    width: 23px;
+    height: 23px;
+    border-radius: 50%;
+    background-color: white;
+    color: #ccc;
+    left: 3px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: var(--main-transition);
+}
+
+.custom-checkbox:checked+label .checkbox-toggle {
+    background-color: var(--blue-color);
+}
+
+.custom-checkbox:checked+label .checkbox-toggle::before {
+    left: 42px;
+    content: "\f00c";
+    color: var(--blue-color);
+}
+
+/* end components */
+/* end global rules */
+.page {
+    background-color: #f1f5f9;
+    min-height: 100vh;
+}
+
+/* start side bar */
+.side-bar {
+    width: 200px;
+    box-shadow: 0 0 10px #ddd;
+    position: relative;
+}
+
+.side-bar>h3 {
+    margin-bottom: 50px;
+    position: relative;
+    font-weight: 600;
+}
+
+@media (min-width: 768px) {
+
+    .side-bar>h3::before,
+    .side-bar>h3::after {
+        content: "";
+        position: absolute;
+        background-color: black;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .side-bar>h3::before {
+        width: 80px;
+        height: 2px;
+        bottom: -20px;
+    }
+
+    .side-bar>h3::after {
+        border: 4px solid white;
+        border-radius: 50%;
+        height: 12px;
+        width: 12px;
+        bottom: -28px;
+    }
+}
+
+.side-bar ul li a {
+    transition: .3S;
+    margin-bottom: 5px;
+}
+
+.side-bar ul li a:hover,
+.side-bar ul li a.active {
+    background-color: #f6f6f6;
+}
+
+.side-bar ul li a span {
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+@media (max-width: 767px) {
+    .side-bar {
+        width: 62px;
+        padding: 10px;
+    }
+
+    .side-bar>h3 {
+        font-size: 13px;
+        margin-bottom: 15px;
+    }
+}
+
+/* end side bar */
+/* start content */
+/* start head */
+.content {
+    flex: 1;
+    overflow: hidden;
+}
+
+.content>.head {
+    padding: 15px;
+    box-shadow: 0 0 10px #ddd;
+}
+
+.content .head .search {
+    position: relative;
+}
+
+.content .head .search::before {
+    font-family: "Font Awesome 6 free";
+    content: "\f002";
+    font-weight: 900;
+    color: var(--grey-color);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10px;
+    font-size: 14px;
+}
+
+.content .head .search input {
+    padding-left: 30px;
+    border: 1px solid var(--grey-color);
+    width: 160px;
+    transition: var(--main-transition);
+}
+
+.content .head .search input:focus {
+    width: 200px;
+}
+
+.content .head .search input:focus::placeholder {
+    opacity: 0;
+    transition: var(--main-transition);
+}
+
+.content .head .icons .notification {
+    position: relative;
+    margin-right: 10px;
+}
+
+.content .head .icons .notification::before {
+    content: "";
+    position: absolute;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background-color: var(--red-color);
+    top: -3px;
+    right: -5px;
+}
+
+.content .head .icons img {
+    width: 30px
+}
+
+/* end head */
+/* start dashboard head */
+.page h1 {
+    position: relative;
+    margin: 20px 20px 40px;
+    font-weight: 600;
+}
+
+.page h1::before {
+    content: "";
+    position: absolute;
+    height: 3px;
+    width: 120px;
+    background-image: linear-gradient(to right, black 33%, white 33%);
+    bottom: -15px;
+}
+
+/* end dashboard head */
+/* start wrapper */
+.wrapper>div {
+    box-shadow: 0 0 10px #ddd;
+}
+
+/* start control site widget */
+.control-site .control .text {
+    flex: 1;
+}
+
+.control-site .message {
+    height: 150px;
+    resize: none;
+    border: 1px solid #ccc;
+}
+
+/* end control site widget */
+/* start general info widget */
+.general-info input {
+    border: 1px solid #ccc;
+}
+
+.general-info .email input {
+    background-color: #f0f4f8;
+    color: #bbb;
+    cursor: not-allowed;
+}
+
+/* end general info widget */
+/* start security info widget */
+.security-info .row {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.security-info .row:not(:last-child) {
+    border-bottom: 1Px solid #eee;
+}
+
+.security-info .row button {
+    cursor: pointer;
+    font-size: 16px;
+    width: 70px;
+    padding: 5px 0;
+}
+
+/* end security info widget */
+/* start social media widget */
+.social-info div {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.social-info input {
+    padding: 10px 45px;
+    border: 1px solid #ccc;
+    height: 100%;
+    background-color: #eeeeee78;
+}
+
+.social-info div i {
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 16px;
+    width: 35px;
+    height: 100%;
+    border-right: 1px solid #ccc;
+    transition: var(--main-transition);
+}
+
+.social-info input:focus+i {
+    color: black;
+}
+
+/* end social media widget */
+/* start widget control widget */
+.widget-control div input {
+    appearance: none;
+    display: none;
+}
+
+.widget-control div label {
+    position: relative;
+    padding-left: 30px;
+}
+
+.widget-control div label::before,
+.widget-control div label::after {
+    transform: translateY(-50%);
+    border-radius: 6px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transition: var(--main-transition);
+}
+
+.widget-control div label::before {
+    content: "";
+    height: 15px;
+    width: 15px;
+    background-color: white;
+    border: 3px solid var(--grey-color);
+}
+
+.widget-control div label:hover::before {
+    border-color: var(--blue-color);
+}
+
+.widget-control div label::after {
+    content: "\f00c";
+    width: 20px;
+    height: 20px;
+    background-color: var(--blue-color);
+    font-family: "Font Awesome 6 free";
+    font-weight: 900;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: scale(0) rotate(0);
+    top: 1px;
+}
+
+.widget-control div input:checked  + label::before {
+    opacity: 0;
+}
+
+.widget-control div input:checked + label::after {
+    transform: scale(1) rotate(360deg);
+    top: 1px;
+}
+/* end widget control widget */
+/* start backup manager widget */
+.backup-manager > div > input {
+    appearance: none;
+    display: none;
+}
+
+.backup-manager > div > label {
+    padding-left: 30px;
+    position: relative;
+}
+
+.backup-manager > div > label::before,
+.backup-manager > div > label::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    transition: var(--main-transition);
+}
+
+.backup-manager > div > label::before {  
+    height: 17px;
+    width: 17px;
+    left: 0;
+    border: 2px solid var(--grey-color);
+}
+
+.backup-manager > div > label::after {
+    height: 11px;
+    width: 11px;
+    transform: scale(0) translateY(-50%);
+    left: 5px;
+    background-color: var(--blue-color);
+}
+
+.backup-manager > div > input:checked + label::before {
+    border-color: var(--blue-color);
+
+}
+
+.backup-manager > div > input:checked + label::after {
+    transform: scale(1) translateY(-50%);
+}
+
+.backup-manager .boxes {
+    gap: 15px;
+    padding: 20px 0;
+    border-top: 1px solid #eee;
+}
+
+.backup-manager .boxes > div {
+    width: calc((100% / 3) - 10px);
+}
+
+.backup-manager .boxes > div label {
+    border: 2px solid #ccc;
+    width: 100%;
+    height: 100%;
+}
+
+.backup-manager .boxes > div input {
+    appearance: none;
+    display: none;
+}
+
+.backup-manager .boxes > div input:checked + label {
+    border-color: var(--blue-color);
+}
+
+.backup-manager .boxes > div input:checked + label div {
+    color: var(--blue-color);
+}
+/* end backup manager widget */
+/* end wrapper */
